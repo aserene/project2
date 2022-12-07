@@ -12,10 +12,9 @@ const wishSchema = new  Schema({
     name: String,
     price: Number,
     image: String,
-    link: String,
-    username: String
+    link: String
 })
 
-const Wish = model('Wish', wishSchema)
+const Wish = model("Wish", wishSchema)
 
 module.exports = Wish

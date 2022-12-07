@@ -2,6 +2,13 @@
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 <body>
-    <h1>index page</h1>
+    <div class="container">
+        <h1>Your Wishes</h1>
+        <% wishes.forEach((wish, index) => { %>
+            <div class="index card">
+                <a href="/wish/<%=wish._id%>"><h4><%=wish.name%> - <%=wish.price%></h4></a>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>
