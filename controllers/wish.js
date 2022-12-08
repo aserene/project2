@@ -39,6 +39,9 @@ router.get("/", async (req, res) => {
 // Edit Route
 
 // Show route
-
+router.get("/:id", async (req, res) => {
+    const wish = await Wish.findById(req.params.id)
+    res.render("wishes/show.ejs", {wish})
+})
 
 module.exports = router
