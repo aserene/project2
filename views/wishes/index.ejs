@@ -4,6 +4,7 @@
 <body>
     <div class="container">
         <h1>Your Wishes</h1>
+        <a href="/wish/new"><button>Make A New Wish</button></a>
         <% wishes.forEach((wish, index) => { %>
             <div class="index card">
                 <a href="/wish/<%=wish._id%>"><h4><%=wish.name%> - <%=wish.price%></h4></a>

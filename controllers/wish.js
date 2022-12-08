@@ -29,13 +29,18 @@ router.get("/", async (req, res) => {
     res.render("wishes/index.ejs", {wishes})
 })
 // New Route
-
+router.get("/new", (req, res) => {
+    res.render("wishes/new.ejs")
+})
 // Destroy Route
 
 // Update Route
 
 // Create Route
-
+router.post("/", async (req, res) => {
+    await Wish.create(req.body)
+    res.redirect("/wish")
+})
 // Edit Route
 
 // Show route
