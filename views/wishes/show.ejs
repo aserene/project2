@@ -2,8 +2,9 @@
 <h2><%=wish.price%></h2>
 <h2><%=wish.image%></h2>
 <h3><%=wish.link%></h3>
-<a href="/wish"><h3>Back to Wishes</h3></a>
 
 <form action="/wish/<%=wish._id%>?_method=DELETE" method="post">
     <input type="submit" value="delete">
 </form>
+<a href="/wish/<%=wish._id%>/edit"><h4>Modify Wish</h4></a>
+<a href="/wish"><h3>Back to Wishes</h3></a>

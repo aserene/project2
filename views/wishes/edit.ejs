@@ -1,0 +1,9 @@
+<h2>Modify Your Wish!</h2>
+
+<form action="/wish/<%=wish._id%>?_method=PUT" method="post">
+    <input type="text" name="name" placeholder="Wish name" value="<%=wish.name%>">
+    <input type="text" name="price" placeholder="Price" value="<%=wish.price%>">
+    <input type="text" name="image" placeholder="Image link" value="<%=wish.image%>">
+    <input type="text" name="link" placeholder="Link to source" value="<%=wish.link%>">
+    <input type="submit" value="Modify Wish">
+</form>

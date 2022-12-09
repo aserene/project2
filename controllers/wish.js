@@ -38,14 +38,20 @@ router.delete("/:id", async (req, res) => {
     res.redirect("/wish")
 })
 // Update Route
-
+router.put("/:id", async (req,res) => {
+    await Wish.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect("/wish")
+})
 // Create Route
 router.post("/", async (req, res) => {
     await Wish.create(req.body)
     res.redirect("/wish")
 })
 // Edit Route
-
+router.get("/:id/edit", async (req, res) => {
+    const wish = await Wish.findById(req.params.id)
+    res.render("wishes/edit.ejs", { wish })
+})
 // Show route
 router.get("/:id", async (req, res) => {
     const wish = await Wish.findById(req.params.id)
