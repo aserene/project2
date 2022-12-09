@@ -33,7 +33,10 @@ router.get("/new", (req, res) => {
     res.render("wishes/new.ejs")
 })
 // Destroy Route
-
+router.delete("/:id", async (req, res) => {
+    await Wish.findByIdAndRemove(req.params.id)
+    res.redirect("/wish")
+})
 // Update Route
 
 // Create Route

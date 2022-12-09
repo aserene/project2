@@ -3,3 +3,7 @@
 <h2><%=wish.image%></h2>
 <h3><%=wish.link%></h3>
 <a href="/wish"><h3>Back to Wishes</h3></a>
+
+<form action="/wish/<%=wish._id%>?_method=DELETE" method="post">
+    <input type="submit" value="delete">
+</form>
