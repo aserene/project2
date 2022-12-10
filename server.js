@@ -17,7 +17,7 @@ app.use(methodOverride("_method"))
 
 // Routes & Routers
 app.get("/", (req, res)=> {
-    res.send("Server is working")
+    res.render("index.ejs")
 })
 app.use("/wish", WishRouter)
 
