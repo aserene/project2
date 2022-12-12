@@ -4,6 +4,7 @@ const express = require("express")
 const morgan = require("morgan")
 const methodOverride = require("method-override")
 const WishRouter = require("./controllers/wish")
+const UserRouter = require("./controllers/user")
 
 
 // create express app
@@ -20,6 +21,7 @@ app.get("/", (req, res)=> {
     res.render("index.ejs")
 })
 app.use("/wish", WishRouter)
+app.use("/user", UserRouter)
 
 // start server
 const PORT = process.env.PORT || 3000
