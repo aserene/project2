@@ -1,9 +1,75 @@
-<h2>Make a Wish!</h2>
+<!DOCTYPE html>
+<html lang="en">
+    <!-- <%- include("../partials/head.ejs") %> -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Quicksand:wght@500&family=Titan+One&display=swap" rel="stylesheet">
+<body style="background-image: url(https://i.pinimg.com/564x/54/ba/b1/54bab1310fa9f541f3adf63ed2e92a49.jpg); color: white;">
+    <header>
+        <div class="header-index" style="display: flex; justify-content: space-between; font-family:'Titan One', cursive;background-color:rgb(96, 96, 210); padding: 10px; border-radius: 10px">
+            <h1>Wish Me!</h1>
+            <h1 class="gather" style="font-family:'Barlow Condensed', sans-serif">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <div class="create-cont" style="justify-content: auto;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40vw;
+    background-color: rgb(255, 247, 247);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif">
+        <header style="text-align: center;
+        background-color: rgb(255, 220, 82);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding-bottom: 3px;
+        padding-top: 3px">
+            <h2>Make A Wish!</h2>
+        </header>
+        <form style="padding: 15px" action="/wish" method="post">
+            <label>Wish Name</label>
+            <br>
+            <input style="width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px;
+            padding: 5px" type="text" name="name">
+            <br>
+            <label>Price</label>
+            <br>
+            <input style="width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px;
+            padding: 5px" type="text" name="price">
+            <br>
+            <label>Image Link</label>
+            <br>
+            <input style="width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px;
+            padding: 5px" type="text" name="image">
+            <br>
+            <label>Link to Buy</label>
+            <br>
+            <input style="width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px;
+            padding: 5px" type="text" name="link">
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif;
+            color: white;
+            margin: 5px;
+            width: 95%;
+            border-radius: 10px;
+            border: none;
+            padding: 15px;
+            background-color: rgb(96, 96, 210);
+            justify-content: center" type="submit" value="Make New Wish">
+        </form>
+    </div>
+</body>
 
-<form action="/wish" method="post">
-    <input type="text" name="name" placeholder="Wish name">
-    <input type="text" name="price" placeholder="Price">
-    <input type="text" name="image" placeholder="Image link">
-    <input type="text" name="link" placeholder="Link to source">
-    <input type="submit" value="Make New Wish">
-</form>

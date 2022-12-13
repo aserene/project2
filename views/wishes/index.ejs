@@ -2,11 +2,20 @@
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 <body>
+    <header>
+        <div class="header-index">
+            <h1>Wish Me!</h1>
+            <h1 class="gather">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li class="c">Welcome <%= user %> </li>
+            <li style="float:right"><a href="/user/logout" class="d">Logout</a></li>
+            <li style="float:right" class="a"><a href="/wish/new">Make A New Wish</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <h1>Your Wishes</h1>
-        <h3>Welcome <%= user %></h3>
-        <a href="/user/logout"><button>Logout</button></a>
-        <a href="/wish/new"><button>Make A New Wish</button></a>
         <% wishes.forEach((wish, index) => { %>
             <div class="index card">
                 <a href="/wish/<%=wish._id%>"><h4><%=wish.name%> - <%=wish.price%></h4></a>
