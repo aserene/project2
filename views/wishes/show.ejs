@@ -1,10 +1,37 @@
-<h1><%= wish.name%></h1>
-<h2><%=wish.price%></h2>
-<h2><%=wish.image%></h2>
-<h3><%=wish.link%></h3>
-
-<form action="/wish/<%=wish._id%>?_method=DELETE" method="post">
-    <input type="submit" value="delete">
-</form>
-<a href="/wish/<%=wish._id%>/edit"><h4>Modify Wish</h4></a>
-<a href="/wish"><h3>Back to Wishes</h3></a>
+<!DOCTYPE html>
+<html lang="en">
+    <!-- <%- include("../partials/head.ejs") %> -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Quicksand:wght@500&family=Titan+One&display=swap" rel="stylesheet">
+<body style="background-image: url(https://i.pinimg.com/564x/54/ba/b1/54bab1310fa9f541f3adf63ed2e92a49.jpg); color: white;">
+    <header>
+        <div class="header-index" style="display: flex; justify-content: space-between; font-family:'Titan One', cursive;background-color:rgb(96, 96, 210); padding: 10px; border-radius: 10px">
+            <h1>Wish Me!</h1>
+            <h1 class="gather" style="font-family:'Barlow Condensed', sans-serif">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <div class="show-cont" style="justify-content: auto;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40vw;
+    background-color: rgb(255, 247, 247);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif">
+        <header style="text-align: center;
+        background-color: rgb(255, 220, 82);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding-bottom: 3px;
+        padding-top: 3px"><h2><%= wish.name%></h2></header>
+        <img src="<%=wish.image%>" alt="Picture of <%=wish.name%>" style="display:block; margin-left: auto; margin-right: auto; width: 80%; height: 20%; object-fit: cover; border: 1px solid black;">
+        <h4>Price: $<%=wish.price%></h4>
+        <h4 style="white-space: nowrap; width: 99%; overflow:hidden; text-overflow: ellipses">Link to Buy: <%=wish.link%></h4>
+        <a href="/wish"><h3>Back to Wishes</h3></a>
+        <a href="/wish/<%=wish._id%>/edit"><h4>Modify Wish</h4></a>
+        <form action="/wish/<%=wish._id%>?_method=DELETE" method="post">
+            <input type="submit" value="delete">
+        </form>
+    </div>
+</body>
