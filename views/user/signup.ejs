@@ -2,22 +2,28 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %>
 
-  <body>
-    <main>
-      <div>
-        <form action="/user/signup" method="post">
-          <fieldset>
-            <legend>New User</legend>
-            <label
-              >USERNAME: <input type="text" name="username" required />
-            </label>
-            <label
-              >PASSWORD: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Create Account" />
-          </fieldset>
+<body>
+    <header>
+        <div class="header">
+            <h1>Welcome to Wish Me!</h1>
+            <h1 class="gather">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <div class="signup-cont">
+        <header>
+        <h2>Sign Up!</h2>
+        </header>
+        <form class="form" action="/user/signup" method="post">
+            <label>Username</label>
+            <br>
+            <input class="username" type="text" name="username" required/>
+            <br>
+            <label>Password</label>
+            <br>
+            <input class="password" type="password" name="password" required />
+            <br>
+            <input class="submit"type="submit" value="Create Account"/>
         </form>
-      </div>
-    </main>
-  </body>
+</div>
+</body>
 </html>

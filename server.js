@@ -14,7 +14,7 @@ const app = express()
 
 // register middleware
 app.use(morgan("tiny")) // announcement video said "dev"
-app.use( express.static("public")) // took out the "/static"
+app.use(express.static("public")) // took out the "/static"
 app.use(express.urlencoded({extended : true}))
 app.use(methodOverride("_method"))
 app.use(

@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs") %>
-
-  <body>
-    <main>
-      <div>
-        <form action="/user/login" method="post">
-          <fieldset>
-            <legend>User Login</legend>
-            <label
-              >USERNAME: <input type="text" name="username" required />
-            </label>
-            <label
-              >PASSWORD: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Login" />
-          </fieldset>
-        </form>
-      </div>
-    </main>
-  </body>
+    <%- include("../partials/head.ejs") %>
+<body style="background-image: url(https://i.pinimg.com/564x/54/ba/b1/54bab1310fa9f541f3adf63ed2e92a49.jpg); color: white;">
+    <header>
+        <div class="header" style="display: flex; justify-content: space-between; font-family:'Titan One', cursive;background-color:rgb(96, 96, 210); padding: 10px; border-radius: 10px">
+            <h1>Welcome to Wish Me!</h1>
+            <h1 class="gather" style="font-family:'Barlow Condensed', sans-serif">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <div class="login-cont" style="justify-content: auto;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40vw;
+    background-color: rgb(255, 247, 247);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif">
+            <header style="text-align: center;
+            background-color: rgb(255, 220, 82);
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            padding-bottom: 3px;
+            padding-top: 3px">
+            <h2>Login</h2>
+            <h5>New to Wish Me? <a href="/user/signup">Sign Up!</a></h5>
+            </header>
+            <form style="padding: 15px" class="form" action="/user/login" method="post">
+                <label>Username</label>
+                <br>
+                <input style="width: 93%;
+                border-radius: 10px;
+                border: none;
+                border-bottom: 2px;
+                padding: 5px" class="username" type="text" name="username" required/>
+                <br>
+                <label>Password</label>
+                <br>
+                <input style="width: 93%;
+                border-radius: 10px;
+                border: none;
+                border-bottom: 2px;
+                padding: 5px" class="password" type="password" name="password" required />
+                <br>
+                <input style="font-family: 'Quicksand', sans-serif;
+                color: white;
+                margin: 5px;
+                width: 95%;
+                border-radius: 10px;
+                border: none;
+                padding: 15px;
+                background-color: rgb(96, 96, 210);
+                justify-content: center" class="submit"type="submit" value="Login"/>
+            </form>
+    </div>
+</body>
 </html>
