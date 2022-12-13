@@ -1,34 +1,51 @@
-const express = require('express') // bring this in so we can make our router
-const Wish = require('../models/wish')
+const express = require("express") // bring this in so we can make our router
+const Wish = require("../models/wish")
 
 
 /////
-// Create Router  variable to attach rooutes
+// Create Router  variable to attach routes
 /////
 
-const router = express.Router() // router will have all routes attached to it
+const router = express.Router()
+
+router.use((req, res, next) => {
+    console.log(req.session)
+    if(req.session.loggedIn) {
+        next()
+    } else {
+        res.redirect("/user/login")
+    }
+})
 
 //routes
 
 // seed route
-router.get("/seed", async (req,res) => {
-    await Wish.remove({})
-    const wishes = await Wish.create([
-        {name: "Hammer", price: 12, image:"jpg", link:"placeholder"},
-        {name: "teaset", price: 50, image:"jpg", link:"placeholder"},
-        {name: "jacket", price: 120, image:"jpg", link:"placeholder"}
-    ])
-    res.json(wishes)
-})
+// router.get("/seed", async (req,res) => {
+//     await Wish.remove({})
+//     const wishes = await Wish.create([
+//         {name: "Hammer", price: 12, image:"jpg", link:"placeholder"},
+//         {name: "teaset", price: 50, image:"jpg", link:"placeholder"},
+//         {name: "jacket", price: 120, image:"jpg", link:"placeholder"}
+//     ])
+//     res.json(wishes)
+// })
 
-// INDUCES
+
+// INDUCES is the order that routes should be created
 
 // Index Route
+// router.get("/", async (req, res) => {
+    //     const wishes = await Wish.find({})
+    //     res.render("wishes/index.ejs", {wishes})
+    // })
 router.get("/", async (req, res) => {
-    const wishes = await Wish.find({})
-    res.render("wishes/index.ejs", {wishes})
+        console.log(req.session)
+        Wish.find({username: req.session.username}, (err, wishes) => {
+            res.render("wishes/index.ejs", { wishes, user: req.session.username })
+          })
+        .catch(err => console.log(err))
 })
-// New Route
+    // New Route
 router.get("/new", (req, res) => {
     res.render("wishes/new.ejs")
 })
@@ -44,8 +61,11 @@ router.put("/:id", async (req,res) => {
 })
 // Create Route
 router.post("/", async (req, res) => {
-    await Wish.create(req.body)
-    res.redirect("/wish")
+    req.body.username = req.session.username
+    await Wish.create(req.body, (err, createdWish) => {
+        console.log('created' , createdWish, err)
+        res.redirect("/wish")
+    })
 })
 // Edit Route
 router.get("/:id/edit", async (req, res) => {

@@ -12,7 +12,8 @@ const wishSchema = new  Schema({
     name: String,
     price: Number,
     image: String,
-    link: String
+    link: String,
+    username: String
 })
 
 const Wish = model("Wish", wishSchema)
