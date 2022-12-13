@@ -2,3 +2,56 @@ body {
     background-image: url(https://i.pinimg.com/564x/54/ba/b1/54bab1310fa9f541f3adf63ed2e92a49.jpg);
     color: white;
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Titan One', cursive;
+    background-color: rgb(96, 96, 210);
+    padding: 10px;
+    border-radius: 10px;
+}
+.gather {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.login-cont {
+    justify-content: auto;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40vw;
+    background-color: rgb(255, 247, 247);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif
+
+}
+.login-cont header {
+    text-align: center;
+    background-color: rgb(255, 220, 82);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.form {
+    padding: 15px;
+}
+.username, .password {
+    width: 93%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px;
+    padding: 5px;
+}
+.submit {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    margin: 5px;
+    width: 95%;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    background-color: rgb(96, 96, 210);
+    justify-content: center;
+}

@@ -2,9 +2,28 @@
 <html lang="en">
     <%- include("./partials/head.ejs") %>
 <body>
-    <div class="login">
-        <a href="/user/signup"><button>Signup</button></a>
-        <a href="/user/login"><button>Login</button></a>
+    <header>
+        <div class="header">
+            <h1>Welcome to Wish Me!</h1>
+            <h1 class="gather">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <div class="login-cont">
+            <header>
+            <h2>Login</h2>
+            <h5>New to Wish Me? <a href="/user/signup">Sign Up!</a></h5>
+            </header>
+            <form class="form" action="/user/login" method="post">
+                <label>Username</label>
+                <br>
+                <input class="username" type="text" name="username" required/>
+                <br>
+                <label>Password</label>
+                <br>
+                <input class="password" type="password" name="password" required />
+                <br>
+                <input class="submit"type="submit" value="Login"/>
+            </form>
     </div>
 </body>
 </html>
