@@ -17,8 +17,11 @@
     </nav>
     <div class="container">
         <% wishes.forEach((wish, index) => { %>
-            <div class="index card">
-                <a href="/wish/<%=wish._id%>"><h4><%=wish.name%> - <%=wish.price%></h4></a>
+            <div class="index-card">
+                <header class="index-card-header">
+                    <a href="/wish/<%=wish._id%>"><h4><%=wish.name%></h4></a>
+                </header>
+                <img id="index-img" src="<%=wish.image%>" alt="Picture of <%=wish.name%>">
             </div>
         <% }) %>
     </div>

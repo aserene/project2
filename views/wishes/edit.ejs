@@ -1,9 +1,90 @@
-<h2>Modify Your Wish!</h2>
-
-<form action="/wish/<%=wish._id%>?_method=PUT" method="post">
-    <input type="text" name="name" placeholder="Wish name" value="<%=wish.name%>">
-    <input type="text" name="price" placeholder="Price" value="<%=wish.price%>">
-    <input type="text" name="image" placeholder="Image link" value="<%=wish.image%>">
-    <input type="text" name="link" placeholder="Link to source" value="<%=wish.link%>">
-    <input type="submit" value="Modify Wish">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    <!-- <%- include("../partials/head.ejs") %> -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Quicksand:wght@500&family=Titan+One&display=swap" rel="stylesheet">
+<body style="background-image: url(https://i.pinimg.com/564x/54/ba/b1/54bab1310fa9f541f3adf63ed2e92a49.jpg); color: white;">
+    <header>
+        <div class="header-index" style="display: flex; justify-content: space-between; font-family:'Titan One', cursive;background-color:rgb(96, 96, 210); padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            <h1>Wish Me!</h1>
+            <h1 class="gather" style="font-family:'Barlow Condensed', sans-serif">Gather your wishes in one place</h1>
+        </div>
+    </header>
+    <nav class="nav" style="font-family: 'Quicksand', sans-serif;
+    background-color: rgb(255, 220, 82);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px">
+        <ul style="list-style-type: none;
+        margin: 0;
+        padding: 8px;
+        overflow: hidden">
+            <li style="display: inline;
+            color: black;
+            text-decoration: none" class="c">Welcome <%= user %> </li>
+            <li style="display: inline;
+            color: black;
+            text-decoration: none; float:right" class="a"><a href="/wish" style="color:black;text-decoration: none;">Return to Wishes</a></li>
+        </ul>
+    </nav>
+    <div class="create-cont" style="justify-content: auto;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40vw;
+    background-color: rgb(255, 247, 247);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif">
+        <header style="text-align: center;
+        background-color: rgb(255, 220, 82);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding-bottom: 3px;
+        padding-top: 3px">
+            <h2>Modify Your Wish!</h2>
+        </header>
+        <form style="padding: 15px" action="/wish/<%=wish._id%>?_method=PUT" method="post">
+            <label>Wish Name</label>
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif;width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px solid rgb(151, 151, 151);
+            padding: 5px" type="text" name="name" value="<%=wish.name%>">
+            <br>
+            <label>Price</label>
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif; width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px solid rgb(151, 151, 151);
+            padding: 5px" type="text" name="price" value="<%=wish.price%>">
+            <br>
+            <label>Image Link</label>
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif; width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px solid rgb(151, 151, 151);
+            padding: 5px" type="text" name="image" value="<%=wish.image%>">
+            <br>
+            <label>Link to Buy</label>
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif; width: 93%;
+            border-radius: 10px;
+            border: none;
+            border-bottom: 2px solid rgb(151, 151, 151);
+            padding: 5px" type="text" name="link" value="<%=wish.link%>">
+            <br>
+            <input style="font-family: 'Quicksand', sans-serif;
+            color: white;
+            margin: 5px;
+            width: 95%;
+            border-radius: 10px;
+            border: none;
+            padding: 15px;
+            background-color: rgb(96, 96, 210);
+            justify-content: center" type="submit" value="Modify <%=wish.name%>">
+        </form>
+    </div>
+</body>
